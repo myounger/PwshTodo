@@ -1,0 +1,12 @@
+PSTOPIC
+    about_PwshTodo
+
+SHORT DESCRIPTION
+    PwshTodo allows you to create simple markdown files locally for a tracking tasks
+
+LONG DESCRIPTION
+    PwshTodo allows you to create simple markdown files locally for a tracking tasks
+
+DETAILED DESCRIPTION
+    This module creates a series of markdown files locally in the $ENV:USERPROFILE/Documents/Task folder. These files can then be edited 
+    using the functions in this module.
