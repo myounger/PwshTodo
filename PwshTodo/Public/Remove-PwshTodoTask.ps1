@@ -35,3 +35,6 @@ function Remove-PwshTodoTask {
     Set-Content -Path $file -Value $newContent -Force
 }
 
+
+New-Alias -Name 'rt' -Value Remove-PwshTodoTask
+

@@ -52,3 +52,5 @@ function Add-PwshTodoTask {
     if ($PassThru) { Get-PwshTodo }
 }
 
+New-Alias -Name 'at' -Value Add-PwshTodoTask
+

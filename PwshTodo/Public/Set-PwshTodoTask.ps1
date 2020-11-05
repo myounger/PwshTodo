@@ -41,3 +41,6 @@ function Set-MryTask {
     Set-Content -Path $file -Value $newContent -Force
 }
 
+
+New-Alias -Name 'st' -Value Set-PwshTodoTask
+

@@ -5,3 +5,16 @@ This is a very simple PowerShell module used to create local markdown files that
 ## Getting Started
 
 To get started, create your first markdown file by using the Add-PwshTodoTask function.
+
+## Function aliases
+
+Below is a list of the exported aliases for this module
+
+```powershell
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           at -> Add-PwshTodoTask                             1.0        PwshTodo
+Alias           gt -> Get-PwshTodo                                 1.0        PwshTodo
+Alias           rt -> Remove-PwshTodoTask                          1.0        PwshTodo
+Alias           st -> Set-PwshTodoTask                             1.0        PwshTodo
+```

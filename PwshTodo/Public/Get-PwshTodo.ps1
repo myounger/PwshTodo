@@ -60,3 +60,7 @@ function Get-PwshTodo {
         Write-Output $completedItems
     } else { Write-Output "Task file doesn't exist for today. Create one with Add-MryTask."}
 }
+
+
+New-Alias -Name 'gt' -Value Get-PwshTodo
+

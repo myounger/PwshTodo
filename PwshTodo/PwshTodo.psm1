@@ -6,5 +6,5 @@ foreach ($file in @($privateFunctions + $publicFunctions)) {
     catch { Write-Error -Message "Failed to import function $($file.FullName): $_" }
 }
 
-Export-ModuleMember -Function $publicFunctions.Basename
+Export-ModuleMember -Function $publicFunctions.Basename -Alias *
 
