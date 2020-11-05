@@ -1,4 +1,4 @@
-function Set-MryTask {
+function Set-PwshTodoTask {
     <#
     .SYNOPSIS
     
