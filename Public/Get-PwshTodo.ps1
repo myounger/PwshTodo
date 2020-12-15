@@ -33,14 +33,22 @@ function Get-PwshTodo {
         $lineNum = 1
         $inProgressItems = ''
         $completedItems = ''
+        $backlogItems = ''
         foreach ($line in $content) {
             Write-Verbose $line
             if ($lineNum -notin (1,2)) {
                 if ($line -like '- `[ `]*') {
-                    if (-not $RemoveLineNumbers) {
-                        $inProgressItems += "[$($lineNum)] "
+                    if ($line -like "*backlog*") {
+                        if (-not $RemoveLineNumbers) {
+                            $backlogItems += "[$($lineNum)] "
+                        }
+                        $backlogItems += "$($line.TrimStart('- [ ]'))`n"
+                    } else {
+                        if (-not $RemoveLineNumbers) {
+                            $inProgressItems += "[$($lineNum)] "
+                        }
+                        $inProgressItems += "$($line.TrimStart('- [ ]'))`n"
                     }
-                    $inProgressItems += "$($line.TrimStart('- [ ]'))`n"
                 } else {
                     if (-not $RemoveLineNumbers) {
                         $completedItems += "[$($lineNum)] "
@@ -58,6 +66,9 @@ function Get-PwshTodo {
 
         Write-Host "Completed:" -ForegroundColor Green
         Write-Output $completedItems
+
+        Write-Host "Backlog:" -ForegroundColor Yellow
+        Write-Output $backlogItems
     } else { Write-Output "Task file doesn't exist for today. Create one with Add-MryTask."}
 }
 
