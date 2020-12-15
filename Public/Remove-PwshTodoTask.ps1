@@ -36,5 +36,5 @@ function Remove-PwshTodoTask {
 }
 
 
-New-Alias -Name 'rt' -Value Remove-PwshTodoTask
+New-Alias -Name 'rmt' -Value Remove-PwshTodoTask
 
