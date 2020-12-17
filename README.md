@@ -4,7 +4,23 @@ This is a very simple PowerShell module used to create local markdown files that
 
 ## Getting Started
 
+Download the module to the appropriate module path and import the module:
+
+```powershell
+Import-Module -Name 'PwshTodo'
+```
+
 To get started, create your first markdown file by using the Add-PwshTodoTask function.
+
+```powershell
+Add-PwshTodoTask -Text 'my first task'
+```
+
+To display your new task, type:
+
+```powershell
+Get-PwshTodo
+```
 
 ## Function aliases
 
