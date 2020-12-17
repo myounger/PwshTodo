@@ -4,14 +4,19 @@ function Get-PwshTodo {
     
     .DESCRIPTION
     
-    .PARAMETER ComputerName
-    The target computer 
-    .PARAMETER TestADS
-    An optional switch. Provide this switch if the target server is hosted in the testads.iu.edu domain
+    .PARAMETER RemoveLineNumbers
+    An optional switch. Removes the line numbers from the returned results
+    .PARAMETER ShowLastFile
+    An optional switch. Shows the previous and most recent todo file instead of the current day's todo file
     .EXAMPLE
-    
-    .NOTES
-    
+    Get-PwshTodo
+    Returns the current list of todo items
+    .EXAMPLE
+    Get-PwshTodo -ShowLastFile
+    Returns the list of todo items from the previous and most recent todo text file
+    .EXAMPLE
+    Get-PwshTodo -RemoveLineNumbers
+    Returns the list of todo items from the current todo file and removes the line numbers to easily copy/paste them into another Documents
     #>
 
     [CmdletBinding()]

@@ -1,17 +1,14 @@
 function Remove-PwshTodoTask {
     <#
     .SYNOPSIS
-    
+    Removes a todo task from the current day's todo file
     .DESCRIPTION
-    
-    .PARAMETER ComputerName
-    The target computer 
-    .PARAMETER TestADS
-    An optional switch. Provide this switch if the target server is hosted in the testads.iu.edu domain
+    Removes a todo task from the current day's todo file
+    .PARAMETER LineNumber
+    The target line number from the current day's todo file that you want to remove from the list completely
     .EXAMPLE
-    
-    .NOTES
-    
+    Remove-PwshTodoTask -LineNumber 5
+    Removes the task from the current todo file located on line number 5 of the Documents
     #>
 
     [CmdletBinding()]

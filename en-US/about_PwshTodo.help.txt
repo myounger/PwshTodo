@@ -1,12 +1,44 @@
-PSTOPIC
+TOPIC
     about_PwshTodo
 
 SHORT DESCRIPTION
-    PwshTodo allows you to create simple markdown files locally for a tracking tasks
+    PwshTodo allows you to create simple markdown files locally for tracking tasks
 
 LONG DESCRIPTION
-    PwshTodo allows you to create simple markdown files locally for a tracking tasks
-
-DETAILED DESCRIPTION
     This module creates a series of markdown files locally in the $ENV:USERPROFILE/Documents/Task folder. These files can then be edited 
-    using the functions in this module.
+    using the functions in this module. These todo files are created in the markdown language and use the task item indicates of [ ] for
+    in progress tasks and [X] for completed tasks
+
+EXAMPLES
+    Get-Alias -Definition *PwshTodo*
+    Returns a list of the aliases for the module
+
+    Add-PwshTodoTask -Text "This is a new todo item"
+    Adds a new todo task with the text "This is a new todo item"
+
+    Get-PwshTodo
+    Returns the current list of todo items
+
+    Get-PwshTodo -ShowLastFile
+    Returns the list of todo items from the previous and most recent todo text file
+
+    Get-PwshTodo -RemoveLineNumbers
+    Returns the list of todo items from the current todo file and removes the line numbers to easily copy/paste them into another documents
+
+    Remove-PwshTodoTask -LineNumber 5
+    Removes the task from the current todo file located on line number 5 of the Documents
+
+    Rename-PwshTodoTask -LineNumber 4 -Text "This is the new text"
+    Renames the text from line 4 from the current todo file with the text "This is the new text"
+
+    Rename-PwshTodoTask -LineNumber 4 -Text "backlog: This is a backlog item"
+    Renames the text from line 4 from the current todo file with the text "backlog: This is a backlog item". The addition of the word 
+    "backlog" in the text will visually move the item to the Backlog section when doing a Get-PwshTodo call
+
+    Set-PwshTodoTaskStatus -LineNumber 4
+    Sets the task status to 'Completed' (default status) for the task on line number 4 of the current todo file. This will move the task
+    from the In Progress section to the Completed section
+    
+    Set-PwshTodoTaskStatus -LineNumber 4 -Status 'InProgress'
+    Sets the task status to 'InProgress' for the task on line number 4 of the current todo file. This will move the task
+    from the Completed section to the In Progress section

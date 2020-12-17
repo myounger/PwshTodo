@@ -1,17 +1,22 @@
 function Rename-PwshTodoTask {
     <#
     .SYNOPSIS
-    
+    Renames the todo task text
     .DESCRIPTION
-    
-    .PARAMETER ComputerName
-    The target computer 
-    .PARAMETER TestADS
-    An optional switch. Provide this switch if the target server is hosted in the testads.iu.edu domain
+    Renames the todo task text
+    .PARAMETER LineNumber
+    The target line number of the todo item you want to update the text for
+    .PARAMETER Text
+    The new text you want to insert at a specific line number
     .EXAMPLE
-    
+    Rename-PwshTodoTask -LineNumber 4 -Text "This is the new text"
+    Renames the text from line 4 from the current todo file with the text "This is the new text"
+    .EXAMPLE
+    Rename-PwshTodoTask -LineNumber 4 -Text "backlog: This is a backlog item"
+    Renames the text from line 4 from the current todo file with the text "backlog: This is a backlog item". The addition of the word 
+    "backlog" in the text will visually move the item to the Backlog section when doing a Get-PwshTodo call
     .NOTES
-    
+    ! Adding the word "backlog" to the todo item text will move it to the "Backlog" section of the Get-PwshTodo results
     #>
 
     [CmdletBinding()]
