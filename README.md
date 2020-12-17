@@ -17,5 +17,5 @@ Alias           at -> Add-PwshTodoTask                              1.0        P
 Alias           gt -> Get-PwshTodo                                  1.0        PwshTodo
 Alias           rmt -> Remove-PwshTodoTask                          1.0        PwshTodo
 Alias           rnt -> Rename-PwshTodoTask                          1.0        PwshTodo
-Alias           st -> Set-PwshTodoTask                              1.0        PwshTodo
+Alias           st -> Set-PwshTodoTaskStatus                        1.0        PwshTodo
 ```
